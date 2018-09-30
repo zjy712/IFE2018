@@ -69,7 +69,7 @@ function Dishe(name, cost, price) {
 // 延迟时间
 function deleay() {
     setTimeout(function () {
-        
+        return true
     },3000)
 }
 // 菜单
@@ -78,22 +78,26 @@ var caidan = [
     {
         name: '宫保鸡丁',
         chengbeng: 15,
-        price: 20
+        price: 20,
+        time: 4,
     },
     {
         name: '红烧肉',
         chengbeng: 20,
-        price: 30
+        price: 30,
+        time: 5
     },
     {
         name: '火龙果',
         chengbeng: 10,
-        price: 15
+        price: 15,
+        time: 4
     },
     {
         name: '青椒肉丝',
         chengbeng: 16,
-        price: 25
+        price: 25,
+        time: 8
     }
 ]
 
@@ -116,15 +120,7 @@ var new_chef = new Chef('厨师A',6000);
 ifeRestaurant.RecruitClerk(new_waiter);
 ifeRestaurant.RecruitClerk(new_chef)
 
-// 工作流程 1
-
-// var ClientQueue = new ClientQueue();
-// var ClientA = ClientQueue.getNext();
-// var dish = ClientA.OrderDishe(caidan);
-// new_waiter.Work(dish,new_chef);
-// new_waiter.Work()
 
 // 工作流程 2
 
-
-
+$('#waiter').css({'right':0,'left':'10px'})
