@@ -30,17 +30,28 @@ Clerk.prototype.Work = function () {
 }
 // 服务员 继承于职员
 function Waiter(name, salary) {
-    Clerk.call(this, null, name, salary)  
+    Clerk.call(this, null, name, salary)
 }
 Waiter.prototype = Object.create(Clerk.prototype);
 Waiter.prototype.constructor = Waiter;
-Waiter.prototype.Work = function (x,chef) {
+Waiter.prototype.Work = function (x, chef) {
     console.log('服务员工作了');
     if (x) {
-        console.log('记录客人点菜');
-        return chef.Work(x)
-    } else
+        if (x == 1) {
+            $('#waiter').css('transform', 'translateX(140%)');
+            console.log('等待客人点菜');
+            $('#waiter>p').html('<p>当前状态：等待客人点菜</p>');
+        } else {
+            $('#waiter>p').html('<p>当前状态：记录客人点菜</p>');
+            return chef.Work(x)
+        }
+    } else {
+        $('#waiter').css('transform', 'translateX(-140%)');
+        $('#waiter>p').html('<p>当前状态：取菜</p>');
         console.log('上菜');
+        $('#waiter').css('transform', 'translateX(140%)');
+        $('#waiter>p').html('<p>当前状态：上菜</p>');
+    }
 }
 // 厨师类
 function Chef(name, salary) {
@@ -49,15 +60,21 @@ function Chef(name, salary) {
 Chef.prototype = Object.create(Clerk.prototype);
 Chef.prototype.constructor = Chef;
 Chef.prototype.Work = function (x) {
-    console.log('厨师工作完毕，他做的是'+x.name);
+    console.log('厨师工作完毕，他做的是' + x.name);
 }
 // 顾客类
-function Client(){
-    
+function Client() {
+
 }
 Client.prototype.OrderDishe = function (caidan) {
+    console.log('点菜');
+
+    $('#Client>p').html('<p>当前状态：点菜</p>');
     var index = Math.floor(Math.random() * caidan.length)
-    console.log('他点了'+ caidan[index].name);
+    sleep(3000);
+    console.log('他点了' + caidan[index].name);
+    $('#Client>p').html('<p>当前状态：他点了' + caidan[index].name + '</p>');
+    sleep(500)
     return caidan[index];
 }
 // 菜类
@@ -65,12 +82,6 @@ function Dishe(name, cost, price) {
     this.name = name;
     this.cost = cost;
     this.price = price;
-}
-// 延迟时间
-function deleay() {
-    setTimeout(function () {
-        return true
-    },3000)
 }
 // 菜单
 
@@ -102,7 +113,7 @@ var caidan = [
 ]
 
 // 顾客队列
-function ClientQueue(){
+function ClientQueue() {
 
 }
 ClientQueue.prototype.getNext = function () {
@@ -115,12 +126,51 @@ var ifeRestaurant = new Restaurant({
     seat_count: 20,
     clerk_list: []
 })
-var new_waiter = new Waiter('服务员A',3000);
-var new_chef = new Chef('厨师A',6000);
+var new_waiter = new Waiter('服务员A', 3000);
+var new_chef = new Chef('厨师A', 6000);
 ifeRestaurant.RecruitClerk(new_waiter);
 ifeRestaurant.RecruitClerk(new_chef)
 
+// 延迟函数
+function sleep12(numberMillis) {
+    var now = new Date();
+    var exitTime = now.getTime() + numberMillis;
+    while (true) {
+        now = new Date();
+        if (now.getTime() > exitTime)
+            return;
+    }
+};
 
 // 工作流程 2
+var ClientQueue = new ClientQueue();
+var ClientA = ClientQueue.getNext();
+// $('input').click(function (e) {
+//     e.preventDefault();
+//     // var hasclient = 1;
+//     // new_waiter.Work(hasclient);
 
-$('#waiter').css({'right':0,'left':'10px'})
+//     // var dish = ClientA.OrderDishe(caidan);
+
+//     // new_waiter.Work(dish,new_chef);
+//     // // new_waiter.Work()
+//     // $('#waiter').css('transform', 'translateX(-140%)');
+//     // $('#waiter>p').html('<p>当前状态：取菜</p>');
+//     console.log(1);
+//     document.getElementById('waiter').children[1].innerHTML() = '<p>当前状态：取菜</p>'
+//     // console.log('上菜');
+//     sleep(4000)
+//     // $('#waiter').css('transform', 'translateX(140%)');
+//     console.log(2);
+    
+//     // $('#waiter>p').html('<p>当前状态：上菜</p>');
+// });
+var btn = document.getElementsByTagName('input')[0];
+var wa = document.getElementById('waiter');
+    btn.onclick = function () {
+    wa.style.backgroundColor = 'red'
+    sleep12(3000);
+    
+    wa.style.backgroundColor = 'blue'
+}
+console.log(document.getElementsByTagName('input'));

@@ -25,13 +25,12 @@
     background-color: bisque;
     height: 450px;
     width: 60%;
-    position: relative;
+    text-align: center;
+    
 }
 #waiter {
     border-radius: 50%;
-    position: absolute;
-    right: 10px;
-    transition:1s all ease-in-out;
+    width: 125px;
 }
 
 .box .right{
