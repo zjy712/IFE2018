@@ -1,0 +1,18 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 916px;
+    height: 440px; 
+    background: url(stick.png) ; 
+    position: relative;
+    margin-top: 40px;
+}
+
+.btn {
+    align-self: flex-start;
+    margin-top: 47px;
+}
