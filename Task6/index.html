@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,49 +9,65 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    
-    <nav class="navbar navbar-default " role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header col-md-3">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Title</a>
+
+<body data-spy="scroll" data-target=".navbar-collapse">
+    <header>
+        <div class="logo">
+            <a href="#intro" class=" "><img src="images/logo.png" style="height:30px;width:30px;"></span></a>
         </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
+        <div class="header-right">
+            <ul>
+                <li><a href="#intro" class="smoothScroll">公司简介</a></li>
+                <li><a href="#channel" class="smoothScroll">合作渠道</a></li>
+                <li><a href="#pattern" class="smoothScroll">合作模式</a></li>
+                <li><a href="#display" class="smoothScroll">产品展示</a></li>
+                <li><a href="#operate" class="smoothScroll">运营方式</a></li>
+                <li><a href="#sceneRendering" class="smoothScroll">场景效果图</a></li>
             </ul>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </nav>
-    
+        </div>
+    </header>
+    <div id="intro">
+        <div class="intro-title">
+            <p>公司简介</p>
+            <span>Company Introduction</span>
+        </div>
+        <div class="intro-main">
+            <img src="images/intro_title.png" alt="" srcset="">
+            <div class="intro-content">
+                <span>蜂马网络简介</span>
+                <p>
+                    公司于2015年成立，公司凭借优质的接戳行业背景资源以及深厚的互联网产品研发实力，历时两年打造出智能共享按摩椅的一站式服务平台，也是中国首家智能按摩椅共享服务平台；公司在北京／广州／深圳／南京／武汉／长沙／成都均设有办事处，公司总部及研发中心位于上海。公司一直以来立志于以共享经济为基础，通过物联网及移动互联网技术，以一个人人付得起的价格打造公共环境下的优质坐享服务，倡导全民生活轻松一点，健康一点。
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar">
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                </button>
+                <a href="#intro" class="navbar-brand smoothScroll"><img src="images/logo.png" style="height:30px;width:30px;"></span></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="">
+                    <li><a href="#intro" class="smoothScroll">公司简介</a></li>
+                    <li><a href="#channel" class="smoothScroll">合作渠道</a></li>
+                    <li><a href="#pattern" class="smoothScroll">合作模式</a></li>
+                    <li><a href="#display" class="smoothScroll">产品展示</a></li>
+                    <li><a href="#operate" class="smoothScroll">运营方式</a></li>
+                    <li><a href="#sceneRendering" class="smoothScroll">场景效果图</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+
 </body>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.smooth-scroll.js"></script>
+
 </html>
