@@ -1,9 +1,9 @@
 // var newplate = document.createElement('div');
-var newcss = {
-    'height': '50px',
-    'background-color': 'red',
-    'margin-top': '10px',
-    'position': 'absolute',
+var plate = {
+    'x' : 30,
+    'y' : 700,
+    'height': 100,
+    'width' : 550
 }
 var a = {
     name: 'a',
@@ -21,26 +21,44 @@ var animationsteps = []; //储存动画步骤
 
 $('.btn1').click(function (e) {
     e.preventDefault();
-    var newplate = document.createElement('div');
-    var num = $('.box>div').length;
-    var width = 250 - num * 30;
-    var left = 16.5 * (num + 1);
-    var bottom = 55 * (num + 1);
-    newcss.width = width + 'px';
-    newcss.left = left + 'px';
-    newcss.bottom = bottom + 'px';
-    $(newplate).prependTo('.box').css(newcss).attr('index', num);
-    var css = {
-        'index': num,
-        'left': left,
-        'bottom': bottom
-    }
-    a.list.push(css);
-    // a.list.num.css = {
-    //     'left' : left,
-    //     'bottom' : bottom
-    // }
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = 'red';
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = '2';
+    var num = a.list.length;
+    var newplate = {};
+    newplate.X = plate.x * (num+1);
+    newplate.Y = plate.y  - (num*plate.height+10);
+    newplate.H = plate.height;
+    newplate.W = plate.width - (num*30*2);
+    ctx.fillRect(newplate.X,newplate.Y, newplate.W, newplate.H);
+    ctx.strokeRect(newplate.X,newplate.Y, newplate.W, newplate.H);
+    a.list.push(newplate);
 
+    // var time = setInterval(function () {
+    //     if (i == 1000) {
+    //         clearInterval(time);
+    //     }
+    //     if (x <= 500) {
+    //         i++;
+    //         x += 1;
+    //         ctx.clearRect(x - 1, 100, 250, 250);
+    //         ctx.fillRect(x, 100, 250, 100);
+    //     } else {
+    //         i++;
+    //         y += 1
+    //         ctx.clearRect(x, y - 1, 250, 250);
+    //         ctx.fillRect(x, y, 250, 250);
+    //     }
+    // }, 5)
+    // ctx.arc(100,100,94,0,2*Math.PI,false);
+    // // ctx.translate(100,100)
+    // ctx.stroke()
+    // setTimeout(function () {
+    //     ctx.clearRect(100,100,250,250)
+    //     ctx.stroke()
+    // },5000)
 });
 $('.btn2').click(function (e) {
     e.preventDefault();
@@ -53,22 +71,9 @@ $('.btn2').click(function (e) {
     // }, 500)
     var n = a.list.length;
     hanoi(n, a, b, c);
-    start(0)
     console.log('结束');
 
 });
-var start = function (step) {
-    if (step < animationsteps.length) {
-        go(animationsteps[step])
-        step++;
-
-        setTimeout(function () {
-            start(step)
-        }, 1500)
-    } else {
-        alert('完成');
-    }
-}
 var go = function (step) {
     var plate = 'div[index |=' + step.index + ']';
     $(plate).animate({
@@ -93,39 +98,46 @@ var move = function (n, a, c) {
 
     var num2 = c.list.length;
     var num3 = c.name.charCodeAt() - a.name.charCodeAt();
-    // var aplate = 'div[index |=' + a.list[num1-1] + ']';
-    // var acss = $(aplate).css(['bottom', 'left']);
-    // var upanimate = 465 - parseInt(acss.bottom);
-    // var rowanimate = parseInt(acss.left) + num3 * 300;
+    var aCoord = a.list[num1 - 1];
+    // var aCoord = $(aplate).css(['bottom', 'left']);
+    var upY = 0;
+    var i =0;
+    var x =0;
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext('2d');
+    var time = setInterval(function () {
+
+        if (aCoord.Y == upY) {
+            console.log(aCoord.Y);
+            
+            clearInterval(time);
+        } else
+        {
+            console.log(aCoord.Y);
+            i++;
+            x +=5;
+            ctx.clearRect(aCoord.X-2, aCoord.Y+2, aCoord.W+4, aCoord.H);
+            ctx.fillRect(aCoord.X, aCoord.Y-5, aCoord.W, aCoord.H);
+            aCoord.Y -= 5;
+        }
+    }, 1)
+    // var rowanimate = parseInt(aCoord.left) + num3 * 300;
     // var downanimate = (num2 + 1) * 52;
 
-    var acss = a.list[num1 - 1];
-    // var acss = $(aplate).css(['bottom', 'left']);
-    var upanimate = 520 - parseInt(acss.bottom);
-    var rowanimate = parseInt(acss.left) + num3 * 300;
-    var downanimate = (num2 + 1) * 52;
+    // console.log(a.name, aCoord.index + '  upanimate' + upanimate + '  rowanimate' + rowanimate + '  downanimate' + downanimate + '=======>' + c.name);
+    // console.log('before' + aCoord.left, aCoord.bottom);
 
-    console.log(a.name, acss.index + '  upanimate' + upanimate + '  rowanimate' + rowanimate + '  downanimate' + downanimate + '=======>' + c.name);
-    console.log('before' + acss.left, acss.bottom);
+    // aCoord.bottom = downanimate;
+    // aCoord.left = rowanimate;
+    // console.log('after' + aCoord.left, aCoord.bottom);
+    // var step = {
+    //     'index': aCoord.index,
+    //     'upanimate': upanimate,
+    //     'rowanimate': rowanimate,
+    //     'downanimate': downanimate
+    // }
+    // animationsteps.push(step)
 
-    acss.bottom = downanimate;
-    acss.left = rowanimate;
-    console.log('after' + acss.left, acss.bottom);
-    var step = {
-        'index': acss.index,
-        'upanimate': upanimate,
-        'rowanimate': rowanimate,
-        'downanimate': downanimate
-    }
-    animationsteps.push(step)
-    // animationsteps.push(acss)
-    // $(aplate).animate({
-    //     bottom: upanimate
-    // }, 500).animate({
-    //     left: rowanimate
-    // }, 500).animate({
-    //     bottom: downanimate
-    // });
 
-    c.list.push(a.list.pop())
+    // c.list.push(a.list.pop())
 }
