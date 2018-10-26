@@ -11,6 +11,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar-collapse">
+    <!-- 头部导航 -->
     <header>
         <div class="logo">
             <a href="#intro" class=" "><img src="images/logo.png" style="height:30px;width:30px;"></span></a>
@@ -20,12 +21,23 @@
                 <li><a href="#intro" class="smoothScroll">公司简介</a></li>
                 <li><a href="#channel" class="smoothScroll">合作渠道</a></li>
                 <li><a href="#pattern" class="smoothScroll">合作模式</a></li>
-                <li><a href="#display" class="smoothScroll">产品展示</a></li>
+                <li class="dropdown">
+                    <a href="#" class="smoothScroll dropdown-toggle" data-toggle="dropdown">产品展示 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#index1">蚁点 R.ant-005</a></li>
+                        <li><a href="#index2">久工 R.ant-006</a></li>
+                        <li><a href="#index3">康迪 SK-01</a></li>
+                        <li><a href="#index4">码客街 C2</a></li>
+                        <li><a href="#index4">久工 LC5000</a></li>
+                    </ul>
+                </li>
                 <li><a href="#operate" class="smoothScroll">运营方式</a></li>
                 <li><a href="#sceneRendering" class="smoothScroll">场景效果图</a></li>
+
             </ul>
         </div>
     </header>
+    <!-- 公司简介 -->
     <div id="intro">
         <div class="intro-title">
             <p>公司简介</p>
@@ -40,6 +52,500 @@
                 </p>
             </div>
         </div>
+    </div>
+
+    <!-- 合作模式 -->
+    <div id="channel">
+        <div class="channel-title">
+            <p>合作模式</p>
+            <span>Channel Parther</span>
+        </div>
+        <div class="channel-main">
+            <!-- <img src="images/channel_main.png" alt="" srcset=""style="height: 480px;"> -->
+            <div class="row">
+
+            </div>
+            <div class="channel-content">
+                <span>应用场景</span>
+                <p>只要有休息、等待人群的场地既是场景，全国市场的容量巨大，保守估计可超500万+台/百亿级市场</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 合作模式 -->
+    <div id="pattern">
+        <div class="pattern-title">
+            <p>合作渠道</p>
+            <span>Channel Parther</span>
+        </div>
+        <div class="pattern-main">
+            <div class="row">
+
+            </div>
+            <div class="pattern-content">
+                <p>资源共享，通过自1助式按摩椅这一载体实现场景流量变现</p>
+                <p>合作商提供场地，平台提供软硬件设备及运营，设备的流量变现收益进行共享分成</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 产品展示 -->
+    <div id="display">
+        <div class="display-title">
+            <p>产品展示</p>
+            <span>Product Display</span>
+        </div>
+        <div class="product1" id="index1">
+            <div class="product1-main">
+                <div class="product1-title">
+                    <p>物联网智能按摩椅</p>
+                    <span>品牌：蚁点 R.ant-005</span>
+                </div>
+                <div class="product1-trait">
+                    <ul>
+                        <li> <img src="images/product_ico1.png">物联网智能终端操控</li>
+                        <li><img src="images/product_ico2.png">5种按摩手法</li>
+                        <li><img src="images/product_ico3.png">70cm碳钢经轨</li>
+                        <li><img src="images/product_ico4.png">3档可调零重力</li>
+                        <li><img src="images/product_ico5.png">按摩头加热</li>
+                        <li><img src="images/product_ico6.png">超强自动程序</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height:255px">
+                <div class="product1-parameter col-md-offset-3 col-md-8">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>核心功能</th>
+                                <th>导轨</th>
+                                <th>太空舱造型</th>
+                                <th>机械手</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>70cm碳钢经轨</td>
+                            <td>●</td>
+                            <td>3D机芯</td>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>基础功能</th>
+                                <th>按摩手法</th>
+                                <th>塑臀</th>
+                                <th>手机操控</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>5种</td>
+                            <td>●</td>
+                            <td>●</td>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>
+                            <div>
+                                产品尺寸<br>
+                                <span>L1360*W740*H1070mm</span><span>|</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                额定功率 <br>
+                                <span>120W</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                适用场景<br>
+                                <span>全场景</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                网络环堍<br>
+                                <span>4G</span>
+                            </div>
+                        </li>
+                        <li>支付方式<br>
+                            <span>扫码支付</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="product-button">
+                <a href="#">
+                    <div style="font-size: 39px">￥1445.8</div>
+                    <div>立即购买</div>
+                </a>
+            </div>
+        </div>
+        <div class="product1" id="index2">
+            <div class="product1-main">
+                <div class="product1-title">
+                    <p>物联网智能按摩椅</p>
+                    <span>品牌：蚁点 R.ant-005</span>
+                </div>
+                <div class="product1-trait">
+                    <ul>
+                        <li> <img src="images/product_ico1.png">物联网智能终端操控</li>
+                        <li><img src="images/product_ico2.png">5种按摩手法</li>
+                        <li><img src="images/product_ico3.png">70cm碳钢经轨</li>
+                        <li><img src="images/product_ico4.png">3档可调零重力</li>
+                        <li><img src="images/product_ico5.png">按摩头加热</li>
+                        <li><img src="images/product_ico6.png">超强自动程序</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height:255px">
+                <div class="product1-parameter col-md-offset-3 col-md-8">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>核心功能</th>
+                                <th>导轨</th>
+                                <th>太空舱造型</th>
+                                <th>机械手</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>70cm碳钢经轨</td>
+                            <td>●</td>
+                            <td>3D机芯</td>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>基础功能</th>
+                                <th>按摩手法</th>
+                                <th>塑臀</th>
+                                <th>手机操控</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>5种</td>
+                            <td>●</td>
+                            <td>●</td>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>
+                            <div>
+                                产品尺寸<br>
+                                <span>L1360*W740*H1070mm</span><span>|</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                额定功率 <br>
+                                <span>120W</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                适用场景<br>
+                                <span>全场景</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                网络环堍<br>
+                                <span>4G</span>
+                            </div>
+                        </li>
+                        <li>支付方式<br>
+                            <span>扫码支付</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="product-button">
+                <a href="#">
+                    <div style="font-size: 39px">￥1445.8</div>
+                    <div>立即购买</div>
+                </a>
+            </div>
+        </div>
+        <div class="product1" id="index3">
+            <div class="product1-main">
+                <div class="product1-title">
+                    <p>物联网智能按摩椅</p>
+                    <span>品牌：蚁点 R.ant-005</span>
+                </div>
+                <div class="product1-trait">
+                    <ul>
+                        <li> <img src="images/product_ico1.png">物联网智能终端操控</li>
+                        <li><img src="images/product_ico2.png">5种按摩手法</li>
+                        <li><img src="images/product_ico3.png">70cm碳钢经轨</li>
+                        <li><img src="images/product_ico4.png">3档可调零重力</li>
+                        <li><img src="images/product_ico5.png">按摩头加热</li>
+                        <li><img src="images/product_ico6.png">超强自动程序</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height:255px">
+                <div class="product1-parameter col-md-offset-3 col-md-8">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>核心功能</th>
+                                <th>导轨</th>
+                                <th>太空舱造型</th>
+                                <th>机械手</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>70cm碳钢经轨</td>
+                            <td>●</td>
+                            <td>3D机芯</td>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>基础功能</th>
+                                <th>按摩手法</th>
+                                <th>塑臀</th>
+                                <th>手机操控</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>5种</td>
+                            <td>●</td>
+                            <td>●</td>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>
+                            <div>
+                                产品尺寸<br>
+                                <span>L1360*W740*H1070mm</span><span>|</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                额定功率 <br>
+                                <span>120W</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                适用场景<br>
+                                <span>全场景</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                网络环堍<br>
+                                <span>4G</span>
+                            </div>
+                        </li>
+                        <li>支付方式<br>
+                            <span>扫码支付</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="product-button">
+                <a href="#">
+                    <div style="font-size: 39px">￥1445.8</div>
+                    <div>立即购买</div>
+                </a>
+            </div>
+        </div>
+        <div class="product1" id="index4">
+            <div class="product1-main">
+                <div class="product1-title">
+                    <p>物联网智能按摩椅</p>
+                    <span>品牌：蚁点 R.ant-005</span>
+                </div>
+                <div class="product1-trait">
+                    <ul>
+                        <li> <img src="images/product_ico1.png">物联网智能终端操控</li>
+                        <li><img src="images/product_ico2.png">5种按摩手法</li>
+                        <li><img src="images/product_ico3.png">70cm碳钢经轨</li>
+                        <li><img src="images/product_ico4.png">3档可调零重力</li>
+                        <li><img src="images/product_ico5.png">按摩头加热</li>
+                        <li><img src="images/product_ico6.png">超强自动程序</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height:255px">
+                <div class="product1-parameter col-md-offset-3 col-md-8">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>核心功能</th>
+                                <th>导轨</th>
+                                <th>太空舱造型</th>
+                                <th>机械手</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>70cm碳钢经轨</td>
+                            <td>●</td>
+                            <td>3D机芯</td>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>基础功能</th>
+                                <th>按摩手法</th>
+                                <th>塑臀</th>
+                                <th>手机操控</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>5种</td>
+                            <td>●</td>
+                            <td>●</td>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>
+                            <div>
+                                产品尺寸<br>
+                                <span>L1360*W740*H1070mm</span><span>|</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                额定功率 <br>
+                                <span>120W</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                适用场景<br>
+                                <span>全场景</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                网络环堍<br>
+                                <span>4G</span>
+                            </div>
+                        </li>
+                        <li>支付方式<br>
+                            <span>扫码支付</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="product-button">
+                <a href="#">
+                    <div style="font-size: 39px">￥1445.8</div>
+                    <div>立即购买</div>
+                </a>
+            </div>
+        </div>
+        <div class="product1" id="index5">
+            <div class="product1-main">
+                <div class="product1-title">
+                    <p>物联网智能按摩椅</p>
+                    <span>品牌：蚁点 R.ant-005</span>
+                </div>
+                <div class="product1-trait">
+                    <ul>
+                        <li> <img src="images/product_ico1.png">物联网智能终端操控</li>
+                        <li><img src="images/product_ico2.png">5种按摩手法</li>
+                        <li><img src="images/product_ico3.png">70cm碳钢经轨</li>
+                        <li><img src="images/product_ico4.png">3档可调零重力</li>
+                        <li><img src="images/product_ico5.png">按摩头加热</li>
+                        <li><img src="images/product_ico6.png">超强自动程序</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height:255px">
+                <div class="product1-parameter col-md-offset-3 col-md-8">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>核心功能</th>
+                                <th>导轨</th>
+                                <th>太空舱造型</th>
+                                <th>机械手</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>70cm碳钢经轨</td>
+                            <td>●</td>
+                            <td>3D机芯</td>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>基础功能</th>
+                                <th>按摩手法</th>
+                                <th>塑臀</th>
+                                <th>手机操控</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>●</td>
+                            <td>5种</td>
+                            <td>●</td>
+                            <td>●</td>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>
+                            <div>
+                                产品尺寸<br>
+                                <span>L1360*W740*H1070mm</span><span>|</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                额定功率 <br>
+                                <span>120W</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                适用场景<br>
+                                <span>全场景</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                网络环堍<br>
+                                <span>4G</span>
+                            </div>
+                        </li>
+                        <li>支付方式<br>
+                            <span>扫码支付</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="product-button">
+                <a href="#">
+                    <div style="font-size: 39px">￥1445.8</div>
+                    <div>立即购买</div>
+                </a>
+            </div>
+        </div>
+
     </div>
     <!-- <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
