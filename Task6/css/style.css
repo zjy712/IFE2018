@@ -53,20 +53,26 @@ header .header-right >li >a:visited {
 #intro .intro-title , 
 #channel .channel-title,
 #pattern .pattern-title,
-#display .display-title {
+#display .display-title,
+#operate .operate-title,
+#sceneRendering .sceneRendering-title {
     text-align: center;
 }
 #intro .intro-title p , 
 #channel .channel-title p,
 #pattern .pattern-title p,
-#display .display-title p{
+#display .display-title p,
+#operate .operate-title P,
+#sceneRendering .sceneRendering-title p{
     font-size: 30px;
     color: #EB6717;
 }
 #intro .intro-title span ,
 #channel .channel-title span,
 #pattern .pattern-title span,
-#display .display-title span {
+#display .display-title span,
+#operate .operate-title span,
+#sceneRendering .sceneRendering-title span {
     font-size: 24px;
     color: #536562;
 }
@@ -84,7 +90,7 @@ header .header-right >li >a:visited {
     z-index: 0;
 }
 #intro .intro-main .intro-content {
-    width: 100%;
+
     height: 424px;
     margin-left: 362px;
     
@@ -107,7 +113,7 @@ header .header-right >li >a:visited {
 #channel {
     width: 100%;
     height: 710px;
-    padding-top: 38px;
+    padding-top: 45px
 }
 #channel .channel-main .row {
   background: url('../images/channel_main.png') no-repeat center;
@@ -115,7 +121,7 @@ header .header-right >li >a:visited {
   background-size: 35%; 
 }
 #channel .channel-main .channel-content {
-    width: 100%;
+
     height: 424px;
     margin-left: 362px;
 }
@@ -132,7 +138,7 @@ header .header-right >li >a:visited {
 #pattern {
     width: 100%;
     height: 700px;
-    padding-top: 38px;
+    padding-top: 45px;
     background-color: #efefef;
 }
 #pattern .pattern-main .row {
@@ -145,10 +151,10 @@ header .header-right >li >a:visited {
     font-size: 16px;
     color: #5d6c68;
 }
-
+/* 产品展示 */
 #display {
     width: 100%;
-    padding-top: 38px;
+    padding-top: 45px
 }
 
 
@@ -157,34 +163,33 @@ header .header-right >li >a:visited {
 #display .product1 {
     width: 100%;
     margin-top: 15px;
-    margin-bottom: 200px;
-    
-    
+    padding-top: 57px;
+    padding-bottom: 35px;
 }
 #index1 {
-    background: url(../images/product1.png) no-repeat 69% -4%;
-    background-size: 27%;
+    background: url(../images/product1.png) no-repeat 65% 14%;
+    background-size: 26%;
 }
 #index2 {
-    background: url(../images/product2.png) no-repeat 69% -4%;
-    background-size: 27%;
+    background: url(../images/product2.png) no-repeat 63% 14%;
+    background-size: 26%;
+    background-color: #EFEFEF;
 }
 #index3 {
-    background: url(../images/product4.png) no-repeat 61% 4%;
-    background-size: 25%;
+    background: url(../images/product3.png) no-repeat 59% 24%;
+    background-size: 30%;
 }
 #index4 {
-    background: url(../images/product4.png) no-repeat 69% -4%;
-    background-size: 27%;
+    background: url(../images/product4.png) no-repeat 61% 22%;
+    background-size: 32%;
+    background-color: #EFEFEF;
 }
 #index5 {
-    background: url(../images/product5.png) no-repeat 69% -4%;
-    background-size: 27%;
+        background: url(../images/product5.png) no-repeat 63% 13%;
+    background-size: 26%;
 }
-#index6 {
-    background: url(../images/product5.png) no-repeat 62% 13%;
-    background-size: 27%;
-}
+
+
 #display .product1 .product1-main{
     /* height: 460px;
     background: url(../images/product1.png) no-repeat 59% 82%;
@@ -245,6 +250,7 @@ header .header-right >li >a:visited {
 }
 #display .product1 .product1-parameter ul {
     list-style: none;
+    margin-top: 18px;
 }
 #display .product1 .product1-parameter li {
     float: left;
@@ -291,24 +297,34 @@ header .header-right >li >a:visited {
     width: 46px;
     line-height: 46px;
 }
-/* .navbar {
-    background-color: #EB6618;
-    min-height: 40px;
+
+
+/* 运营方式 */
+#operate {
+    padding-top: 45px;
 }
-.navbar-header {
-    line-height: 40px;
+#operate .operate-main{
+    margin-bottom: 15px;
+    padding-top: 45px;
 }
-.navbar-brand {
-    padding: 10px 10px;
+
+/* 场景效果图 */
+#sceneRendering  {
+    padding-top: 45px;
 }
-.navbar-default li {
-    list-style: none;
-    float: left;
+#sceneRendering .sceneRendering-main {
+    
+   margin-top: 10px;
 }
-.navbar-default a {
-    color: #fff;
-    display: block;
-    height: 40px;
-    line-height: 40px;
-    margin-left: 120px;
-} */
+#sceneRendering .sceneRendering-main .carousel-inner img {
+    max-width: 100%;
+    height:auto;
+}
+#sceneRendering .carousel {
+    position: relative;
+    width: 50%;
+    left: 511px;
+}
+#bottom {
+    padding-top: 45px;
+}
