@@ -3,10 +3,20 @@
     padding: 0;
 }
 body {
-    overflow-x:hidden;
+
 }
 .main {
-    
+    width: 1200px;
+    min-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+.main2 {
+    width: 1200px;
+    min-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    background-color: #efefef;
 }
 /* 头部 */
 a:focus, a:hover {
@@ -22,6 +32,8 @@ header{
     right: 0;
     top: 0;
     z-index: 999;
+    width: 1200px;
+    min-width: 1200px;
 }
 header .logo {
     margin-left: 362px;
@@ -60,16 +72,16 @@ header .header-right >ul >li :hover {
 /* 公司简介 */
 #intro {
     width: 100%;
-    height: 800px;
     padding-top: 56px;
 }
-#intro .intro-title , 
+#intro  .intro-title , 
 #channel .channel-title,
 #pattern .pattern-title,
 #display .display-title,
 #operate .operate-title,
 #sceneRendering .sceneRendering-title {
     text-align: center;
+    position: relative;
 }
 #intro .intro-title p , 
 #channel .channel-title p,
@@ -91,52 +103,48 @@ header .header-right >ul >li :hover {
 }
 #intro .intro-main {
     position: relative;
-    margin-top: 240px;
+    /* margin-top: 240px; */
     color: #fff;
     background-color: #EB6717;
+    margin-top: 152px;
+}
+#intro  img {
+    position: absolute;
+    top: -156px;
+    right: 0;
     z-index: 99;
 }
-#intro .intro-main img {
-    position: absolute;
-    top: -226px;
-    right: 362px;
-    z-index: 0;
-}
 #intro .intro-main .intro-content {
-
-    height: 424px;
-    margin-left: 362px;
-    
+    width: 1200px;
+    min-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
 }
 #intro .intro-main .intro-content span {
     font-size: 24px;
-    position: absolute;
-    top: 76px;
-    margin-bottom: 90px;
+    /* position: absolute; */
+    /* top: 76px; */
+    display: block;
+    padding: 76px 0 119px 0;
+    /* margin-bottom: 90px; */
 }
 #intro .intro-main .intro-content p {
-    position: absolute;
-    top: 166px;
     line-height: 32px;
     font-size: 16px;
+    letter-spacing: 2px;
     width: 880px;
 }
 
 /* 合作渠道 */
 #channel {
-    width: 100%;
-    height: 710px;
     padding-top: 45px
 }
-#channel .channel-main .row {
-  background: url('../images/channel_main.png') no-repeat center;
-  height: 480px;
-  background-size: 35%; 
+#channel .channel-main {
+    text-align: center;
 }
 #channel .channel-main .channel-content {
-
-    height: 424px;
-    margin-left: 362px;
+    text-align: left;
 }
 #channel .channel-main .channel-content span {
     color: #EB6717;
@@ -147,18 +155,15 @@ header .header-right >ul >li :hover {
     font-size: 16px;
     color: #5d6c68;
 }
+
 /* 合作模式 */
 #pattern {
-    width: 100%;
-    height: 700px;
     padding-top: 45px;
     background-color: #efefef;
 }
-#pattern .pattern-main .row {
-    background: url('../images/pattern_main.png') no-repeat center;
-    height: 480px;
-    background-size: 35%; 
-  }
+#pattern .pattern-main{
+    text-align: center;
+}
 #pattern .pattern-main .pattern-content p {
     text-align: center;
     font-size: 16px;
@@ -174,14 +179,11 @@ header .header-right >ul >li :hover {
 
 
 #display .product1 {
-    width: 100%;
-    margin-top: 15px;
-    padding-top: 57px;
-    padding-bottom: 35px;
+    padding: 15px 0 15px 0;
 }
 #index1 {
-    background: url(../images/product1.jpg) no-repeat 65% 14%;
-    background-size: 26%;
+    background: url(../images/product1.jpg) no-repeat 79% 9%;
+    background-size: 42%;
 }
 #index2 {
     background: url(../images/product2.jpg) no-repeat 63% 14%;
@@ -204,10 +206,7 @@ header .header-right >ul >li :hover {
 
 
 #display .product1 .product1-main{
-    /* height: 460px;
-    background: url(../images/product1.png) no-repeat 59% 82%;
-    background-size: 27%; */
-    padding-left: 433px;
+    margin-left: 25px;
 }
 #display .product1 .product1-main .product1-title p {
     font-size: 35px;
@@ -238,7 +237,7 @@ header .header-right >ul >li :hover {
     margin-top: 50px;
 }
 #display .product1 .product1-parameter {
- 
+    margin-left: 20%
 }
 #display .product1 .product1-parameter th {
     background-color: #EB6717;
@@ -264,6 +263,7 @@ header .header-right >ul >li :hover {
 #display .product1 .product1-parameter ul {
     list-style: none;
     margin-top: 18px;
+    height: 45px;
 }
 #display .product1 .product1-parameter li {
     float: left;
