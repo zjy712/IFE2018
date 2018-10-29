@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
 }
+body {
+    overflow-x:hidden;
+}
+.main {
+    
+}
 /* 头部 */
 a:focus, a:hover {
     color: #fff;
