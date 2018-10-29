@@ -3,6 +3,10 @@
     padding: 0;
 }
 /* 头部 */
+a:focus, a:hover {
+    color: #fff;
+    text-decoration: none;
+}
 header{
     height: 40px;
     line-height: 40px;
@@ -17,6 +21,13 @@ header .logo {
     margin-left: 362px;
     float: left;
     margin-right: 165px;
+}
+header .logo #intro :hover {
+    text-decoration: none;
+}
+header .logo .logo_title {
+    color: #fff;
+    margin-left: 10px;
 }
 header .header-right {
     
@@ -36,15 +47,9 @@ header .header-right >ul >li >a {
     height: 35px;
 }
 header .header-right >ul >li :hover {
-    text-decoration: none;
     border-bottom: 2px solid #fff;
 }
-header .header-right >li >a:visited {
-    text-decoration: none;
-}
-header .header-right >li >a:hover {
-    text-decoration: none;
-}
+
 
 /* 公司简介 */
 #intro {
@@ -169,25 +174,25 @@ header .header-right >li >a:hover {
     padding-bottom: 35px;
 }
 #index1 {
-    background: url(../images/product1.png) no-repeat 65% 14%;
+    background: url(../images/product1.jpg) no-repeat 65% 14%;
     background-size: 26%;
 }
 #index2 {
-    background: url(../images/product2.png) no-repeat 63% 14%;
+    background: url(../images/product2.jpg) no-repeat 63% 14%;
     background-size: 26%;
     background-color: #EFEFEF;
 }
 #index3 {
-    background: url(../images/product3.png) no-repeat 59% 24%;
+    background: url(../images/product3.jpg) no-repeat 59% 24%;
     background-size: 30%;
 }
 #index4 {
-    background: url(../images/product4.png) no-repeat 61% 22%;
+    background: url(../images/product4.jpg) no-repeat 61% 22%;
     background-size: 32%;
     background-color: #EFEFEF;
 }
 #index5 {
-        background: url(../images/product5.png) no-repeat 63% 13%;
+        background: url(../images/product5.jpg) no-repeat 63% 13%;
     background-size: 26%;
 }
 
@@ -308,8 +313,17 @@ header .header-right >li >a:hover {
 #operate .operate-main{
     margin-bottom: 15px;
     padding-top: 45px;
+    position: relative;
 }
-
+#operate .operate-main span {
+    position: absolute;
+    color: #fff;
+    bottom: 15px;
+    display: block;
+    font-size: 24px;
+    left: 50%;
+    margin-left: -240px;
+}
 /* 场景效果图 */
 #sceneRendering  {
     padding-top: 45px;
