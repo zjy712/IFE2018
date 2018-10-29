@@ -9,13 +9,10 @@ body {
     width: 1200px;
     min-width: 1200px;
     height: auto;
+    padding: 0 30px;
     margin: 0 auto;
 }
-.main2 {
-    width: 1200px;
-    min-width: 1200px;
-    height: auto;
-    margin: 0 auto;
+.shell {
     background-color: #efefef;
 }
 /* 头部 */
@@ -32,13 +29,12 @@ header{
     right: 0;
     top: 0;
     z-index: 999;
-    width: 1200px;
+    width: 100%;
     min-width: 1200px;
+
 }
 header .logo {
-    margin-left: 362px;
     float: left;
-    margin-right: 165px;
 }
 header .logo #intro :hover {
     text-decoration: none;
@@ -53,11 +49,11 @@ header .header-right {
 header .header-right >ul {
     list-style: none;
     height: 40px;
+    margin-left: 50px
 }
 header .header-right >ul >li {
-    
     float: left;
-    margin-left: 110px;
+    margin-left: 54px;
 }
 header .header-right >ul >li >a {
     display: block;
@@ -67,7 +63,6 @@ header .header-right >ul >li >a {
 header .header-right >ul >li :hover {
     border-bottom: 2px solid #fff;
 }
-
 
 /* 公司简介 */
 #intro {
@@ -119,6 +114,7 @@ header .header-right >ul >li :hover {
     min-width: 1200px;
     height: auto;
     margin: 0 auto;
+    padding: 0 30px;
     position: relative;
 }
 #intro .intro-main .intro-content span {
@@ -182,31 +178,32 @@ header .header-right >ul >li :hover {
     padding: 15px 0 15px 0;
 }
 #index1 {
-    background: url(../images/product1.jpg) no-repeat 79% 9%;
-    background-size: 42%;
+    background: url(../images/product1.jpg) no-repeat 89% 9%;
+    background-size: 43%;
 }
 #index2 {
-    background: url(../images/product2.jpg) no-repeat 63% 14%;
-    background-size: 26%;
+    background: url(../images/product2.jpg) no-repeat 83% 16%;
+    background-size: 41%;
     background-color: #EFEFEF;
 }
 #index3 {
-    background: url(../images/product3.jpg) no-repeat 59% 24%;
-    background-size: 30%;
+    background: url(../images/product3.jpg) no-repeat 80% 26%;
+    background-size: 44%;
 }
 #index4 {
-    background: url(../images/product4.jpg) no-repeat 61% 22%;
-    background-size: 32%;
+    background: url(../images/product4.jpg) no-repeat 77% 26%;
+    background-size: 42%;
     background-color: #EFEFEF;
 }
 #index5 {
-        background: url(../images/product5.jpg) no-repeat 63% 13%;
-    background-size: 26%;
+    background: url(../images/product5.jpg) no-repeat 71% 27%;
+    background-size: 34%;
 }
 
 
 #display .product1 .product1-main{
-    margin-left: 25px;
+    margin-left: 130px;
+    margin-top: 30px;
 }
 #display .product1 .product1-main .product1-title p {
     font-size: 35px;
@@ -316,10 +313,21 @@ header .header-right >ul >li :hover {
 #operate {
     padding-top: 45px;
 }
+#operate img {
+    vertical-align: middle;
+    position: absolute;
+    left: 50%;
+    margin-left: -575px;
+    bottom: 29%;
+}
 #operate .operate-main{
-    margin-bottom: 15px;
-    padding-top: 45px;
     position: relative;
+    background-color: #EB6717;
+    height: 340px;
+    margin-top: 376px;
+}
+#operate .operate-row {
+    background-color: #EB6717;
 }
 #operate .operate-main span {
     position: absolute;
@@ -343,9 +351,7 @@ header .header-right >ul >li :hover {
     height:auto;
 }
 #sceneRendering .carousel {
-    position: relative;
-    width: 50%;
-    left: 472px;
+    
 }
 #bottom {
     text-align: center;
@@ -367,8 +373,7 @@ header .header-right >ul >li :hover {
 hr {
     text-align: center;
     margin-top: 10px;
-    margin-left: 364px;
-    width: 60%;
+    
     border-top: 2px solid #000;
 }
 #bottom .bottom_main .phone {
