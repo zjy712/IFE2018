@@ -35,14 +35,16 @@ header .header-right >ul >li >a {
     color: #fff;
     height: 35px;
 }
-header .header-right >li :hover {
+header .header-right >ul >li :hover {
     text-decoration: none;
     border-bottom: 2px solid #fff;
 }
 header .header-right >li >a:visited {
     text-decoration: none;
 }
-
+header .header-right >li >a:hover {
+    text-decoration: none;
+}
 
 /* 公司简介 */
 #intro {
@@ -326,5 +328,29 @@ header .header-right >li >a:visited {
     left: 511px;
 }
 #bottom {
+    text-align: center;
     padding-top: 45px;
+    
+}
+#bottom .bottom_top span {
+    color: #EB6717;
+    font-size: 30px;
+    display: block;
+    margin-top: 20px;
+}
+#bottom .bottom_main {
+    margin-top: 50px;
+}
+#bottom .bottom_main span {
+    font-size: 12px
+}
+hr {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 336px;
+    width: 60%;
+    border-top: 2px solid #000;
+}
+#bottom .bottom_main .phone {
+    font-size: 30px
 }
