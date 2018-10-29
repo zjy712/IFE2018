@@ -345,7 +345,7 @@ header .header-right >ul >li :hover {
 #sceneRendering .carousel {
     position: relative;
     width: 50%;
-    left: 511px;
+    left: 472px;
 }
 #bottom {
     text-align: center;
@@ -367,7 +367,7 @@ header .header-right >ul >li :hover {
 hr {
     text-align: center;
     margin-top: 10px;
-    margin-left: 336px;
+    margin-left: 364px;
     width: 60%;
     border-top: 2px solid #000;
 }
