@@ -72,21 +72,84 @@ $('.btn2').click(function (e) {
     console.log('结束');
 
 });
-var go = function (step) {
-    var plate = 'div[index |=' + step.index + ']';
-    $(plate).animate({
-        bottom: step.upanimate
-    }, 500).animate({
-        left: step.rowanimate
-    }, 500).animate({
-        bottom: step.downanimate
-    }, 500);
-}
-var hanoi = function (n, a, b, c) {
 
+var hanoi = function (n, a, b, c) {
     if (n >= 1) {
         hanoi(n - 1, a, c, b);
-        move(n, a, c);
+        let func = function() {
+            return new Promise((resolve, reject) => {
+                resolve('返回值');
+            });
+        };
+        
+        let cb = function() {
+            return '新的值';
+        }
+        
+        func().then(function () {
+            return cb();
+        }).then(resp => {
+            console.warn(resp);
+            console.warn('1 =========<');
+        });
+        
+        func().then(function () {
+            cb();
+        }).then(resp => {
+            console.warn(resp);
+            console.warn('2 =========<');
+        });
+        
+        func().then(cb()).then(resp => {
+            console.warn(resp);
+            console.warn('3 =========<');
+        });
+        
+        func().then(cb).then(resp => {
+            console.warn(resp);
+            console.warn('4 =========<');
+        });
+    //     move(n, a, c)
+    //     .then(function (aCoord) {
+    //         return new Promise(function (resolve, reject) {
+    //             console.log('Promise2 start');
+    //             var num3 = c.name.charCodeAt() - a.name.charCodeAt();
+    //             var upRow = aCoord.X + num3 * 600;
+    //             for (let i = 0; i < 1000; i++) {
+    //                 if (aCoord.X == upRow) {
+    //                     console.log('Promise2 end');
+    //                     setTimeout(resolve, 1500, aCoord);
+    //                     break;
+    //                 } else {
+    //                     ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+    //                     ctx.fillRect(aCoord.X + 5 * num3, aCoord.Y, aCoord.W, aCoord.H);
+    //                     aCoord.X += 5 * num3
+    //                 }
+    //             }
+    //         });
+
+    //     })
+    //     .then(function (aCoord) {
+    //         console.log('Promise3 start');
+    //         var num2 = c.list.length;
+    //         var updown = 800 - (num2 + 1) * 100;;
+    //         for (let i = 0; i < 1000; i++) {
+    //             if (aCoord.Y == updown) {
+    //                 console.log('Promise3 end');
+    //                 break;
+    //             } else {
+    //                 ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+    //                 ctx.fillRect(aCoord.X, aCoord.Y + 5, aCoord.W, aCoord.H);
+    //                 aCoord.Y += 5
+    //             }
+    //         }   
+    //     c.list.push(a.list.pop())             
+    //     })
+    //     .catch(function(){
+    //         console.log(12);
+            
+    //     })
+    // ;
         hanoi(n - 1, b, a, c);
     }
 }
@@ -100,71 +163,95 @@ var move = function (n, a, c) {
     var aCoord = a.list[num1 - 1];
     // var aCoord = $(aplate).css(['bottom', 'left']);
     var upY = 0;
-   
-    new Promise(function (resolve, reject) {
+
+    return new Promise(function (resolve, reject) {
         console.log('Promise1 start');
-        
-        var time = setInterval(function () {
-            if (aCoord.Y == upY) {
-                setTimeout(resolve, 500, aCoord);
-                clearInterval(time);
-                console.log('Promise1 end');
-            } else {
-                ctx.clearRect(aCoord.X, aCoord.Y , aCoord.W, aCoord.H);
-                ctx.fillRect(aCoord.X, aCoord.Y - 5, aCoord.W, aCoord.H);
-                aCoord.Y -= 5;
-            }
-        }, 1);
-        
+        for (let i = 0; i < 1000; i++) {
+            if (aCoord.Y <= upY) {
+            setTimeout(resolve, 1500, aCoord);
+            console.log('Promise1 end');
+            break;
+        } else {
+            ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+            ctx.fillRect(aCoord.X, aCoord.Y - 50, aCoord.W, aCoord.H);
+            aCoord.Y -= 50;
+        }
+        }
+        // var time = setInterval(function () {
+        //     if (aCoord.Y == upY) {
+        //         setTimeout(resolve, 500, aCoord);
+        //         clearInterval(time);
+        //         console.log('Promise1 end');
+        //     } else {
+        //         ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+        //         ctx.fillRect(aCoord.X, aCoord.Y - 5, aCoord.W, aCoord.H);
+        //         aCoord.Y -= 5;
+        //     }
+        // }, 1);
+
     })
-        .then(function (Coord) {
-            console.log('Promise2 start');
-            var upRow = Coord.X + num3 *600;
-            var time2 = setInterval(function () {
-                if (Coord.X == upRow) {
-                    console.log('Promise2 end');
-                    setTimeout(resolve, 100, Coord);
-                    clearInterval(time2);
-                } else {
-                    ctx.clearRect(Coord.X, Coord.Y , Coord.W, Coord.H);
-                    ctx.fillRect(Coord.X + 5*num3, Coord.Y, Coord.W, Coord.H);
-                    Coord.X += 5*num3
-                }
-            }, 1);
-        })
-        .then(function(Coord) {
-            console.log('Promise3 start');
-            var updown= 800- (num2 + 1) * 100;;
-            var time3 = setInterval(function () {
-                if (Coord.Y == updown) {
-                    console.log('Promise3 end');
-                    clearInterval(time3);
-                } else {
-                    ctx.clearRect(Coord.X, Coord.Y , Coord.W, Coord.H);
-                    ctx.fillRect(Coord.X, Coord.Y+5, Coord.W, Coord.H);
-                    Coord.Y += 5
-                }
-            }, 1);
-        })
-    // var rowanimate = parseInt(aCoord.left) + num3 * 300;
-    // var downanimate = (num2 + 1) * 52;
+    //     .then(function (aCoord) {
+    //         return new Promise(function (resolve, reject) {
+    //             console.log('Promise2 start');
+    //             var num3 = c.name.charCodeAt() - a.name.charCodeAt();
+    //             var upRow = aCoord.X + num3 * 600;
+    //             for (let i = 0; i < 1000; i++) {
+    //                 if (aCoord.X == upRow) {
+    //                     console.log('Promise2 end');
+    //                     setTimeout(resolve, 1500, aCoord);
+    //                     break;
+    //                 } else {
+    //                     ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+    //                     ctx.fillRect(aCoord.X + 5 * num3, aCoord.Y, aCoord.W, aCoord.H);
+    //                     aCoord.X += 5 * num3
+    //                 }
+    //             }
 
-    // console.log(a.name, aCoord.index + '  upanimate' + upanimate + '  rowanimate' + rowanimate + '  downanimate' + downanimate + '=======>' + c.name);
-    // console.log('before' + aCoord.left, aCoord.bottom);
+    //             // var time2 = setInterval(function () {
+    //             //     if (aCoord.X == upRow) {
+    //             //         console.log('Promise2 end');
+    //             //         clearInterval(time2);
+    //             //         setTimeout(resolve, 500, aCoord);
+                        
+    //             //     } else {
+    //             //         ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+    //             //         ctx.fillRect(aCoord.X + 5 * num3, aCoord.Y, aCoord.W, aCoord.H);
+    //             //         aCoord.X += 5 * num3
+    //             //     }
+    //             // }, 1);
+    //         });
 
-    // aCoord.bottom = downanimate;
-    // aCoord.left = rowanimate;
-    // console.log('after' + aCoord.left, aCoord.bottom);
-    // var step = {
-    //     'index': aCoord.index,
-    //     'upanimate': upanimate,
-    //     'rowanimate': rowanimate,
-    //     'downanimate': downanimate
-    // }
-    // animationsteps.push(step)
-
-
-    // c.list.push(a.list.pop())
+    //     })
+    //     .then(function (aCoord) {
+    //         console.log('Promise3 start');
+    //         var updown = 800 - (num2 + 1) * 100;;
+    //         for (let i = 0; i < 1000; i++) {
+    //             if (aCoord.Y == updown) {
+    //                 console.log('Promise3 end');
+    //                 break;
+    //             } else {
+    //                 ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+    //                 ctx.fillRect(aCoord.X, aCoord.Y + 5, aCoord.W, aCoord.H);
+    //                 aCoord.Y += 5
+    //             }
+    //         }
+    //         // if (aCoord != undefined) {
+                
+    //         //     var time3 = setInterval(function () {
+    //         //         if (aCoord.Y == updown) {
+    //         //             console.log('Promise3 end');
+    //         //             clearInterval(time3);
+    //         //         } else {
+    //         //             ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+    //         //             ctx.fillRect(aCoord.X, aCoord.Y + 5, aCoord.W, aCoord.H);
+    //         //             aCoord.Y += 5
+    //         //         }
+    //         //     }, 1);
+    //         // }
+         
+    //     })
+        
+    // c.list.push(a.list.pop())   
 }
 // var movePromise = new Promise(function (resolve, reject) {
 //     console.log('start mew Promise...');
