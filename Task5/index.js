@@ -42,11 +42,19 @@ $('.btn2').click(function (e) {
 
 });
 
+// var hanoi = function (n, a, b, c) {
+//     if (n > 1) {
+//         hanoi(n-1,a,c,b);
+//         move(n,a,c);
+//         hanoi(n-1,b,a,c);
+//     }
+// }
+
 var hanoi = function (n, a, b, c) {
     if (n >= 1) {
         hanoi(n - 1, a, c, b);
         move(n, a, c);
-        hanoi(n - 1, b, a, c);
+        // hanoi(n - 1, b, a, c);
     }
 }
 
@@ -61,11 +69,11 @@ var move = function (n, a, c) {
     var upRow = aCoord.X + num3 * 600;
     var updown = 800 - (num2 + 1) * 100;
 
-    return new Promise(function (resolve, reject) {
+
+    function animate1() {
         console.log('Promise1 start');
         var time = setInterval(function () {
             if (aCoord.Y == upY) {
-                setTimeout(resolve, 500, aCoord);
                 console.log('Promise1 end');
                 clearInterval(time);
             } else {
@@ -74,41 +82,35 @@ var move = function (n, a, c) {
                 aCoord.Y -= 5;
             }
         }, 1);
-    })
-        .then(function (aCoord) {
-            return new Promise(function (resolve, reject) {
-                console.log('Promise2 start');
-                var time2 = setInterval(function () {
-                    if (aCoord.X == upRow) {
-                        console.log('Promise2 end');
-                        clearInterval(time2);
-                        setTimeout(resolve, 500, aCoord);
+    }
+    animate1()
 
-                    } else {
-                        ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
-                        ctx.fillRect(aCoord.X + 5 * num3, aCoord.Y, aCoord.W, aCoord.H);
-                        aCoord.X += 5 * num3
-                    }
-                }, 1);
-            })
+    // var time2 = setInterval(function () {
+    //     if (aCoord.X == upRow) {
+    //         console.log('Promise2 end');
+    //         clearInterval(time2);
+    //         setTimeout(resolve, 500, aCoord);
 
-        })
-        .then(function (aCoord) {
-            return new Promise(function (resolve, reject) {
-                console.log('Promise2 start');
-                var time3 = setInterval(function () {
-                    if (aCoord.Y == updown) {
-                        console.log('Promise3 end');
-                        c.list.push(a.list.pop())
-                        clearInterval(time3);
-                    } else {
-                        ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
-                        ctx.fillRect(aCoord.X, aCoord.Y + 5, aCoord.W, aCoord.H);
-                        aCoord.Y += 5
-                    }
-                }, 1);
-            });
-        });
-    
-    
+    //     } else {
+    //         ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+    //         ctx.fillRect(aCoord.X + 5 * num3, aCoord.Y, aCoord.W, aCoord.H);
+    //         aCoord.X += 5 * num3
+    //     }
+    // }, 1);
+
+    // var time3 = setInterval(function () {
+    //     if (aCoord.Y == updown) {
+    //         console.log('Promise3 end');
+    //         
+    //         clearInterval(time3);
+    //     } else {
+    //         ctx.clearRect(aCoord.X, aCoord.Y, aCoord.W, aCoord.H);
+    //         ctx.fillRect(aCoord.X, aCoord.Y + 5, aCoord.W, aCoord.H);
+    //         aCoord.Y += 5
+    //     }
+    // }, 1);
+
+
+    c.list.push(a.list.pop())
+
 }
